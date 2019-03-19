@@ -64,3 +64,7 @@ private void check_folder(string file)
 		Directory.CreateDirectory(dir);
 	}
 }
+
+# default download location 
+
+c://../desktop/img_grabber_download
