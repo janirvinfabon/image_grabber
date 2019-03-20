@@ -48,6 +48,31 @@ This also uses a Thread, List<T> and linq
 	}
 ```
 
+## on download link sources
+```csharp
+	private void DoLoadLinkResources()
+        {
+            try
+            {
+                var counter = 1;
+                var tmpList = new List<link_sources>();
+
+                foreach (HtmlElement item in this.browser.Document.GetElementsByTagName("IMG"))
+                {
+                    var uri = new Uri(item.GetAttribute("src"));
+                    if (!string.IsNullOrEmpty(Path.GetExtension(uri.AbsolutePath)))
+                    {
+                        var src = item.GetAttribute("src");
+                        tmpList.Add(new link_sources() { No = counter++, ImageSource = src, ImageExtension =  src.Split('.').Last().ToLower() });
+                    }
+                }
+
+                this.linkSOurceList = tmpList.Distinct().ToList();
+            }
+            catch { }
+        }
+```
+
 ## get all img tag
 ```csharp
 	private void GetImages()
