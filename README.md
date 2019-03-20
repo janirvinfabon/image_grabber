@@ -3,7 +3,7 @@ A dot net application that download an image using the URL from user. This appli
 This also uses a Thread, List<T> and linq
 
 ## source class 
-	```c#
+	```csharp
 		public class link_sources
 		{
 			public int No { get; set; }
@@ -12,7 +12,7 @@ This also uses a Thread, List<T> and linq
 		}
 	```
 ## main form properties
-	```c#
+	```csharp
 		private WebBrowser browser = new WebBrowser(); // add a web browser control
 
 		private string defaultLocation = string.Empty;
@@ -20,7 +20,7 @@ This also uses a Thread, List<T> and linq
 	```
 
 ## get all img tag
-	```c#
+	```csharp
 		private void GetImages()
 		{
 			var counter = 1;
@@ -39,7 +39,7 @@ This also uses a Thread, List<T> and linq
 	```
 
 ## download each file
-	```c#
+	```csharp
 		private void Download(List<link_sources> src_list)
 		{
 			src_list.ForEach((x) =>
@@ -63,7 +63,7 @@ This also uses a Thread, List<T> and linq
 	```
 
 ## check file dir
-	```c#
+	```csharp
 		private void check_folder(string file)
 		{
 			var dir = Path.GetDirectoryName(file);
@@ -75,6 +75,6 @@ This also uses a Thread, List<T> and linq
 
 	```
 ## default download location 
-```c#
-	c://../desktop/img_grabber_download
+```csharp
+	c://../desktop/img_grabber_downloads
 ```
